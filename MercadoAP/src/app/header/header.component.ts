@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from "../navbar/navbar.component";
+import { NavigationComponent } from '../navigation/navigation.component'; 
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NavbarComponent],
+  imports: [NavigationComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
