@@ -1,3 +1,28 @@
+# Mercado_ME Aerture Project Overview
+
+The Aperture platform showcases our expertise in cinematic storytelling with a clean, monochromatic theme. Built with Bootstrap, the responsive design ensures an intuitive experience across all devices. Key sections include:
+
+<p>Home: A welcoming introduction to Aperture's mission and services. <br>
+About: Details about our team, vision, and dedication to exceptional cinematography. <br>
+Services: A curated list of our offerings, including editing, cinematography, and more. <br>
+Contact: A simple contact form for clients to reach out for inquiries or project requests. <br>
+404 Not Found: A minimalist error page to guide users back to our main content.
+</p>
+
+## Getting Started
+### Clone the repository:
+`git clone https://github.com/jus-in/Midterms-Finals2425.git`
+
+### Navigate to the project folder:
+`cd Midterms-Finals2425`
+`cd Mercado_ME`
+
+### Install dependencies:
+`npm install`
+
+### Start the Angular development server:
+`ng serve`
+
 # MercadoME
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
