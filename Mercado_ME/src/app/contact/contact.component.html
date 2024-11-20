@@ -1,27 +1,65 @@
 <div class="container my-5">
-    <div class="card">
-        <div class="card-header">
-            <h2 class="font-weight-light mb-2">Contact Us</h2>
-        </div>
-        <div class="card-body">
-            <form>
-                <div class="form-group my-1">
+   <div class="card">
+       <div class="card-header">
+           <h2 class="font-weight-light mb-2">Contact Us</h2>
+       </div>
+       <div class="card-body">
+           <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+               <div class="form-group my-1">
                    <label for="name" class="font-weight-bold my-1">Name</label>
-                   <input type="text" class="form-control border-0 shadow-sm" id="name" placeholder="Your Name">
-                </div>
-                <div class="form-group my-1">
+                   <input 
+                       type="text" 
+                       class="form-control border-0 shadow-sm" 
+                       id="name" 
+                       formControlName="name" 
+                       placeholder="Your Name">
+                   <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="text-danger">
+                       Name is required (min. 2 characters).
+                   </div>
+               </div>
+               <div class="form-group my-1">
                    <label for="email" class="font-weight-bold my-1">Email</label>
-                   <input type="email" class="form-control border-0 shadow-sm" id="email" placeholder="Your Email">
-                </div>
-                <div class="form-group my-1">
+                   <input 
+                       type="email" 
+                       class="form-control border-0 shadow-sm" 
+                       id="email" 
+                       formControlName="email" 
+                       placeholder="Your Email">
+                   <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="text-danger">
+                       Valid email is required.
+                   </div>
+               </div>
+               <div class="form-group my-1">
                    <label for="message" class="font-weight-bold my-1">Message</label>
-                   <textarea class="form-control border-0 shadow-sm" id="message" rows="4" placeholder="Your Message"></textarea>
-                </div>
-                <button type="submit" class="btn btn-dark btn-block mt-3 shadow-sm">Submit</button>
-             </form>         
-        </div>
-      </div>
- </div>
+                   <textarea 
+                       class="form-control border-0 shadow-sm" 
+                       id="message" 
+                       rows="4" 
+                       formControlName="message" 
+                       placeholder="Your Message"></textarea>
+                   <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" class="text-danger">
+                       Message is required (min. 10 characters).
+                   </div>
+               </div>
+               <button type="submit" class="btn btn-dark btn-block mt-3 shadow-sm" [disabled]="contactForm.invalid">
+                   Submit
+               </button>
+           </form>
+       </div>
+   </div>
 
- 
- 
+   <div class="card mt-4" *ngIf="submittedMessages.length > 0">
+       <div class="card-header">
+           <h3 class="font-weight-light mb-2">Submitted Messages</h3>
+       </div>
+       <div class="card-body">
+           <ul class="list-group">
+               <li class="list-group-item" *ngFor="let msg of submittedMessages">
+                   <p><strong>Name:</strong> {{ msg.name }}</p>
+                   <p><strong>Email:</strong> {{ msg.email }}</p>
+                   <p><strong>Message:</strong> {{ msg.message }}</p>
+               </li>
+           </ul>
+       </div>
+   </div>
+</div>
