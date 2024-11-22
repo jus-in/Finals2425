@@ -1,0 +1,122 @@
+<div class="user-profile-container">
+    <!-- Display User Details -->
+    <h2>User Profile</h2>
+    <div class="profile-section">
+        <div class="profile-image-container">
+            <img
+              *ngIf="userProfile.profileImage; else placeholder"
+              [src]="userProfile.profileImage"
+              alt="Profile"
+              class="profile-image"
+            />
+            <ng-template #placeholder>
+              <div class="image-placeholder">No Image</div>
+            </ng-template>
+          </div>
+      <p><strong>First Name:</strong> {{ userProfile.firstName }}</p>
+      <p><strong>Middle Initial:</strong> {{ userProfile.middleInitial }}</p>
+      <p><strong>Last Name:</strong> {{ userProfile.lastName }}</p>
+      <p><strong>Mailing Address:</strong></p>
+      <ul>
+        <li><strong>House Number:</strong> {{ userProfile.mailingAddress.houseNumber }}</li>
+        <li><strong>Street:</strong> {{ userProfile.mailingAddress.street }}</li>
+        <li><strong>Barangay:</strong> {{ userProfile.mailingAddress.barangay }}</li>
+        <li><strong>City:</strong> {{ userProfile.mailingAddress.city }}</li>
+        <li><strong>Province:</strong> {{ userProfile.mailingAddress.province }}</li>
+      </ul>
+      <p><strong>Profile Image:</strong></p>
+      <img *ngIf="userProfile.profileImage" [src]="userProfile.profileImage" alt="Profile" class="profile-image" />
+      <p><strong>Email:</strong> {{ userProfile.email }}</p>
+      <p><strong>Mobile:</strong> {{ userProfile.mobile }}</p>
+    </div>
+    <button (click)="openEditModal()">Edit Profile</button>
+  
+    <!-- Edit Modal -->
+    <div *ngIf="isModalOpen" class="modal">
+      <div class="modal-content">
+        <h3>Edit Profile</h3>
+        <form #editForm="ngForm" (ngSubmit)="onSave()">
+            <div class="profile-image-container">
+                <img
+                  *ngIf="userProfile.profileImage; else placeholder"
+                  [src]="userProfile.profileImage"
+                  alt="Profile"
+                  class="profile-image"
+                />
+                <ng-template #placeholder>
+                  <div class="image-placeholder">No Image</div>
+                </ng-template>
+              </div>
+          <div>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" [(ngModel)]="editableUserProfile.firstName" name="firstName" />
+          </div>
+  
+          <div>
+            <label for="middleInitial">Middle Initial:</label>
+            <input type="text" id="middleInitial" [(ngModel)]="editableUserProfile.middleInitial" name="middleInitial" />
+          </div>
+  
+          <div>
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" [(ngModel)]="editableUserProfile.lastName" name="lastName" />
+          </div>
+  
+          <h4>Mailing Address</h4>
+          <div>
+            <label for="houseNumber">House Number:</label>
+            <input
+              type="text"
+              id="houseNumber"
+              [(ngModel)]="editableUserProfile.mailingAddress.houseNumber"
+              name="houseNumber"
+            />
+          </div>
+  
+          <div>
+            <label for="street">Street:</label>
+            <input type="text" id="street" [(ngModel)]="editableUserProfile.mailingAddress.street" name="street" />
+          </div>
+  
+          <div>
+            <label for="barangay">Barangay:</label>
+            <input type="text" id="barangay" [(ngModel)]="editableUserProfile.mailingAddress.barangay" name="barangay" />
+          </div>
+  
+          <div>
+            <label for="city">City:</label>
+            <input type="text" id="city" [(ngModel)]="editableUserProfile.mailingAddress.city" name="city" />
+          </div>
+  
+          <div>
+            <label for="province">Province:</label>
+            <input
+              type="text"
+              id="province"
+              [(ngModel)]="editableUserProfile.mailingAddress.province"
+              name="province"
+            />
+          </div>
+  
+          <div>
+            <label for="profileImage">Profile Image:</label>
+            <input type="file" id="profileImage" (change)="onImageSelected($event)" />
+          </div>
+  
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" [(ngModel)]="editableUserProfile.email" name="email" />
+          </div>
+  
+          <div>
+            <label for="mobile">Mobile:</label>
+            <input type="text" id="mobile" [(ngModel)]="editableUserProfile.mobile" name="mobile" />
+          </div>
+  
+          <button type="submit">Save</button>
+          <button type="button" (click)="closeEditModal()">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
