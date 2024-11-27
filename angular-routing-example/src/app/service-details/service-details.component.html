@@ -1,0 +1,65 @@
+<div class="service-details-container">
+    <h2>Service Details</h2>
+    <form class="service-details-form" #serviceDetailsForm="ngForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="serviceId">Service ID:</label>
+        <input
+          type="text"
+          id="serviceId"
+          [(ngModel)]="serviceDetails.id"
+          name="serviceId"
+          readonly
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="serviceName">Service Name:</label>
+        <input
+          type="text"
+          id="serviceName"
+          [(ngModel)]="serviceDetails.name"
+          name="serviceName"
+          required
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="serviceDescription">Service Description:</label>
+        <textarea
+          id="serviceDescription"
+          [(ngModel)]="serviceDetails.description"
+          name="serviceDescription"
+          required
+        ></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label for="serviceCategory">Service Category:</label>
+        <select
+          id="serviceCategory"
+          [(ngModel)]="serviceDetails.category"
+          name="serviceCategory"
+          required
+        >
+          <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label for="serviceCost">Cost/Price:</label>
+        <input
+          type="number"
+          id="serviceCost"
+          [(ngModel)]="serviceDetails.cost"
+          name="serviceCost"
+          required
+        />
+      </div>
+  
+      <div class="form-actions">
+        <button class="btn-save" type="submit" [disabled]="serviceDetailsForm.invalid">Save</button>
+        <button class="btn-cancel" type="button" (click)="onCancel()">Cancel</button>
+      </div>
+    </form>
+  </div>
+  

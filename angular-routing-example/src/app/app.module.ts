@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { ServicesComponent } from './services/services.component';
+import { ServiceDetailsComponent } from './service-details/service-details.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     HomeComponent,
     AboutComponent,
     RegistrationComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    ServicesComponent,
+    ServiceDetailsComponent
   ],
   imports: [
     BrowserModule,

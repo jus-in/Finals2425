@@ -1,0 +1,67 @@
+/* ServiceDetailsComponent CSS */
+.service-details-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  
+  .service-details-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input,
+  textarea,
+  select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  input[type="number"] {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+  }
+  
+  textarea {
+    resize: vertical;
+    height: 120px;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .btn-save {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .btn-cancel {
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
