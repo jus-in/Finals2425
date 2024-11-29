@@ -3,12 +3,9 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.css'],
+  styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent {
-  isModalOpen = false;
-
-  // Predefined user profile data
   userProfile = {
     firstName: 'Paul Justin',
     middleInitial: 'O.',
@@ -25,35 +22,27 @@ export class UserProfileComponent {
     mobile: '09171234567',
   };
 
-  // Editable copy of the user profile
   editableUserProfile = { ...this.userProfile };
 
-  // Open modal
-  openEditModal(): void {
-    this.isModalOpen = true;
+  onSave() {
+    this.userProfile = { ...this.editableUserProfile };
+    // You can add logic here to save the updated profile to a backend or local storage
+  }
+
+  cancelEdit() {
     this.editableUserProfile = { ...this.userProfile };
   }
 
-  // Close modal
-  closeEditModal(): void {
-    this.isModalOpen = false;
-  }
-
-  // Save changes
-  onSave(): void {
-    this.userProfile = { ...this.editableUserProfile };
-    this.closeEditModal();
-  }
-
-  // Handle image selection
-  onImageSelected(event: Event): void {
-    const file = (event.target as HTMLInputElement).files?.[0];
+  // New method for handling image selection
+  onImageSelected(event: any) {
+    const file = event.target.files[0];
     if (file) {
+      // This is where you can handle the image file, e.g., display it or upload it to a server
       const reader = new FileReader();
       reader.onload = () => {
-        this.editableUserProfile.profileImage = reader.result as string;
+        this.editableUserProfile.profileImage = reader.result as string; // Store the base64 string
       };
-      reader.readAsDataURL(file);
+      reader.readAsDataURL(file); // Convert the file to base64
     }
   }
 }

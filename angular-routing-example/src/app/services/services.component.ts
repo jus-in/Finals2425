@@ -7,9 +7,11 @@ import { Component } from '@angular/core';
 })
 export class ServicesComponent {
   services = [
-    { id: 1, name: 'Web Development', category: 'IT' },
-    { id: 2, name: 'Graphic Design', category: 'Creative' },
-    { id: 3, name: 'Consulting', category: 'Business' },
+    { id: 1, name: 'Event Photography & Videography', category: 'Event' },
+    { id: 2, name: 'Commercial Photography & Cinematography', category: 'Commercial' },
+    { id: 3, name: 'Film Production', category: 'Film/Media' },
+    { id: 4, name: 'Portrait Photography', category: 'Portrait' },
+    { id: 5, name: 'Drone Cinematography & Photography', category: 'Aerial' },
   ];
 
   viewService(id: number) {

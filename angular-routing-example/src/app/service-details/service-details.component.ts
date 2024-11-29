@@ -14,7 +14,7 @@ export class ServiceDetailsComponent implements OnInit {
     cost: ''
   };
 
-  categories = ['Consulting', 'Repair', 'Installation', 'Training'];
+  categories = ['Event', 'Commercial', 'Film/Media', 'Portrait', 'Aerial'];
 
   constructor() {}
 
@@ -23,9 +23,9 @@ export class ServiceDetailsComponent implements OnInit {
     // For example:
     this.serviceDetails = {
       id: 'S001',
-      name: 'Basic Consulting',
-      description: 'Providing basic consulting services.',
-      category: 'Consulting',
+      name: 'Film Production',
+      description: 'Offering end-to-end film production services, from pre-production planning to final edits.',
+      category: 'Cinematography',
       cost: '100'
     };
   }
