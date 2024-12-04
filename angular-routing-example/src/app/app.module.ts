@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +10,10 @@ import { RegistrationComponent } from './registration/registration.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ServicesComponent } from './services/services.component';
 import { ServiceDetailsComponent } from './service-details/service-details.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { ServiceListComponent } from './service-list/service-list.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +23,17 @@ import { ServiceDetailsComponent } from './service-details/service-details.compo
     RegistrationComponent,
     UserProfileComponent,
     ServicesComponent,
-    ServiceDetailsComponent
+    ServiceDetailsComponent,
+    HeaderComponent,
+    FooterComponent,
+    ServiceListComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,7 +9,7 @@ body {
     box-sizing: border-box;
   }
   
-  .registration-container {
+  .login-container {
     max-width: 600px;
     margin: 40px auto;
     padding: 30px;
@@ -91,7 +91,7 @@ body {
   
   /* Responsive Design */
   @media (max-width: 768px) {
-    .registration-container {
+    .login-container {
       margin: 20px;
       padding: 20px;
     }
@@ -101,6 +101,12 @@ body {
     }
   }
   
+  .login-link {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
   .login-link a {
     color: #007bff;
   }
+  

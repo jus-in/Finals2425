@@ -1,0 +1,41 @@
+.services-list-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  }
+  
+  .services-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .services-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .services-list li {
+    margin-bottom: 10px;
+  }
+  
+  .services-list a {
+    text-decoration: none;
+    color: #333; /* Neutral text color */
+    font-size: 16px;
+    display: block;
+    padding: 8px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  .services-list a:hover {
+    background-color: #333; /* Dark background on hover */
+    color: #fff; /* Light text on hover */
+  }
+  

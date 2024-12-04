@@ -1,60 +1,29 @@
-<!-- <nav>
-  <a routerLink="/">Home</a> | 
-  <a routerLink="/about">About</a> | 
-  <a routerLink="/registration">Registration</a> | 
-  <a routerLink="/user-profile">Profile</a> | 
-  <a routerLink="/services">Services</a> | 
-  <a routerLink="/service-details">Service Details</a>
-</nav>
-<router-outlet></router-outlet> -->
+<div class="page-container">
+  <!-- Header (Navbar) -->
+  <div class="header">
+    <router-outlet name="header"></router-outlet>
+  </div>
 
-<router-outlet name="header">
-  <header class="navbar-container">
-    <nav class="navbar">
-      <div class="navbar-logo">
-        <a href="#">Aperture</a>
-      </div>
-      <ul class="navbar-links">
-        <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/services">Services</a></li>
-        <li><a routerLink="/service-details">Service Details</a></li>
-        <li><a routerLink="/about">About</a></li>
-        <li><a routerLink="/registration">Registration</a></li>
-        <li><a routerLink="/user-profile">Profile</a></li>
-      </ul>
-      <div class="navbar-search">
-        <input type="text" placeholder="Search..." />
-        <button>Search</button>
-      </div>
-    </nav>
-  </header>
-</router-outlet>
-
-<div class="container">
-  <div class="row">
-    <div class="col-3">
-      <router-outlet name="left">This is the left router-outlet.</router-outlet>
+  <!-- Main Container -->
+  <div class="main-container">
+    <!-- Left Sidebar -->
+    <div class="left-sidebar">
+      <router-outlet name="left"></router-outlet>
     </div>
-    <div class="col-6">
+
+    <!-- Main Content -->
+    <div class="main-content">
       <router-outlet></router-outlet>
     </div>
-    <div class="col-3">
-      <router-outlet name="right">This is the right router-outlet.</router-outlet>
+
+    <!-- Right Sidebar -->
+    <div class="right-sidebar">
+      <router-outlet name="right"></router-outlet>
     </div>
   </div>
+
+  <!-- Footer Section -->
+  <div class="footer">
+    <router-outlet name="footer"></router-outlet>
+  </div>
 </div>
-
-<router-outlet name="footer">
-  <footer class="footer">
-    <div class="footer-content">
-      This is the footer router-outlet.
-      <!-- <p>&copy; 2024 Mercado Co. All rights reserved.</p>
-      <ul class="footer-links">
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms of Service</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul> -->
-    </div>
-  </footer>
-</router-outlet>
-
