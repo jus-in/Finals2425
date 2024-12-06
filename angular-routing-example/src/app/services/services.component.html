@@ -1,26 +1,27 @@
 <div class="services-container">
-    <h2>Services</h2>
-    <table class="services-table">
-      <thead>
-        <tr>
-          <th>Service ID</th>
-          <th>Service Name</th>
-          <th>Service Category</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let service of services">
-          <td>{{ service.id }}</td>
-          <td>{{ service.name }}</td>
-          <td>{{ service.category }}</td>
-          <td class="actions">
-            <button (click)="viewService(service.id)">View</button>
-            <button (click)="editService(service.id)">Edit</button>
-            <button (click)="deleteService(service.id)">Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  
+  <h2>Services</h2>
+  <table class="services-table">
+    <thead>
+      <tr>
+        <th>Service ID</th>
+        <th>Service Name</th>
+        <th>Description</th>
+        <th>Price ($)</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let service of services">
+        <td>{{ service.id }}</td>
+        <td>{{ service.name }}</td>
+        <td>{{ service.description }}</td>
+        <td>{{ service.price }}</td>
+        <td class="actions">
+          <button (click)="viewService(service.id)">View</button>
+          <button (click)="editService(service.id)">Edit</button>
+          <button (click)="deleteService(service.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
