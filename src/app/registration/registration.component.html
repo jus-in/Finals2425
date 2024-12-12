@@ -1,0 +1,77 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Account Registration</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        
+        <div *ngIf="successMessage" class="alert alert-success text-center mb-4">
+          {{ successMessage }}
+        </div>
+  
+        <form #registrationForm="ngForm" class="shadow-lg p-4 rounded border" (ngSubmit)="onSubmit(registrationForm)">
+          
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              id="name"
+              class="form-control"
+              name="name"
+              ngModel
+              required
+              placeholder=" "
+            />
+            <label for="name">Full Name</label>
+          </div>
+  
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              name="email"
+              ngModel
+              required
+              placeholder=" "
+            />
+            <label for="email">Email Address</label>
+          </div>
+  
+          <div class="form-floating mb-3">
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              name="password"
+              ngModel
+              required
+              placeholder=" "
+            />
+            <label for="password">Password</label>
+          </div>
+  
+          <div class="form-floating mb-3">
+            <input
+              type="password"
+              id="confirmPassword"
+              class="form-control"
+              name="confirmPassword"
+              ngModel
+              required
+              placeholder=" "
+            />
+            <label for="confirmPassword">Confirm Password</label>
+          </div>
+  
+          <div class="text-center">
+            <button
+              type="submit"
+              class="btn btn-primary w-100"
+              [disabled]="!registrationForm.form.valid || passwordMismatch(registrationForm)"
+            >
+              Register
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

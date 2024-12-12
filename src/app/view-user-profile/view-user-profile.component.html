@@ -1,0 +1,41 @@
+<div class="container mt-5">
+    <h2 class="mb-4">User Profile</h2>
+    <div class="card">
+      <div class="card-body">
+        <!-- Display profile info if not editing -->
+        <div *ngIf="!isEditing">
+          <h5 class="card-title">{{ user.name }}</h5>
+          <p class="card-text"><strong>Email:</strong> {{ user.email }}</p>
+          <h6><strong>Enrolled Courses:</strong></h6>
+          <ul class="list-group mb-3">
+            <li class="list-group-item" *ngFor="let course of user.courses">{{ course }}</li>
+          </ul>
+          <button class="btn btn-outline-primary" (click)="editProfile()">Edit Profile</button>
+        </div>
+  
+        <!-- Edit form if editing -->
+        <div *ngIf="isEditing">
+          <form #editProfileForm="ngForm" (ngSubmit)="saveProfile()">
+            <div class="form-group mb-3">
+              <label for="name">Name</label>
+              <input type="text" id="name" class="form-control" name="name" [(ngModel)]="user.name" required placeholder="Enter your name">
+            </div>
+            <div class="form-group mb-3">
+              <label for="email">Email</label>
+              <input type="email" id="email" class="form-control" name="email" [(ngModel)]="user.email" required placeholder="Enter your email">
+            </div>
+            <div class="form-group mb-3">
+              <label for="courses">Courses</label>
+              <input type="text" id="courses" class="form-control" name="courses" [(ngModel)]="user.courses" required placeholder="Enter courses, separated by commas">
+              <small class="form-text text-muted">Comma-separated list of courses (e.g., Math, Science).</small>
+            </div>
+            <div class="form-group mb-3">
+                <button type="submit" class="btn btn-primary" [disabled]="!editProfileForm.form.valid">Save Changes</button>
+                <button type="button" class="btn btn-secondary ml-3" (click)="cancelEdit()">Cancel</button> <!-- Added ml-3 for more margin -->
+            </div>              
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

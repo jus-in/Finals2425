@@ -1,0 +1,120 @@
+/* Base Styles (applies to all screens) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 2em;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f4f4f4;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .btn-info {
+    background-color: #17a2b8;
+    color: white;
+  }
+  
+  .btn-warning {
+    background-color: #ffc107;
+    color: black;
+  }
+  
+  .modal-dialog {
+    max-width: 500px;
+    margin: 30px auto;
+  }
+  
+  /* Responsive Styles */
+  
+  @media (max-width: 1200px) {
+    /* Large screen (tablet and above) */
+    .container {
+      width: 80%;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    /* Medium screen (tablets) */
+    .container {
+      width: 90%;
+    }
+  
+    table {
+      font-size: 14px;
+    }
+  
+    .btn {
+      padding: 8px 16px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    /* Small screen (mobile portrait) */
+    .container {
+      width: 95%;
+    }
+  
+    h2 {
+      font-size: 1.5em;
+    }
+  
+    table {
+      font-size: 12px;
+    }
+  
+    .btn {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 5px;
+    }
+  
+    .modal-dialog {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    /* Extra small screen (mobile landscape and smaller) */
+    h2 {
+      font-size: 1.2em;
+    }
+  
+    table {
+      font-size: 10px;
+    }
+  
+    .btn {
+      font-size: 12px;
+      padding: 10px;
+    }
+  }
+  
