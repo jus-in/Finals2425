@@ -5,13 +5,14 @@ import { Injectable } from '@angular/core';
 })
 export class DataService {
   private studentRecords: any[] = [
-    { id: 1, name: 'Christian Calagui', email: 'christiancalagui@s.ubaguio.edu', activityType: 'Lecture', relatedInfo: 'Info 1' },
+    { id: 1, name: 'Paul Justin O. Mercado', email: '20226260@s.ubaguio.edu', activityType: 'Lecture', relatedInfo: 'Info 1' },
     { id: 2, name: 'Ian Julius Visperas', email: 'ianjuliusvisperas@s.ubaguio.edu', activityType: 'Laboratory', relatedInfo: 'Info 2' },
     { id: 3, name: 'Averie Gaspar', email: 'averiegaspar@s.ubaguio.edu', activityType: 'Lecture', relatedInfo: 'Info 3' },
     { id: 4, name: 'Melchizidek Martinez', email: 'melchizidekmartinez@s.ubaguio.edu', activityType: 'Laboratory', relatedInfo: 'Info 4' },
     { id: 5, name: 'Aljon Pena', email: 'aljonpena@s.ubaguio.edu', activityType: 'Lecture', relatedInfo: 'Info 5' },
     { id: 6, name: 'Prinz Paulo', email: 'prinzpaulo@s.ubaguio.edu', activityType: 'Laboratory', relatedInfo: 'Info 6' },
     { id: 7, name: 'Orlando Paguirigan', email: 'orlandopaguirigan@s.ubaguio.edu', activityType: 'Laboratory', relatedInfo: 'Info 7' },
+    { id: 8, name: 'Christian Calagui', email: 'christiancalagui@s.ubaguio.edu', activityType: 'Lecture', relatedInfo: 'Info 8' },
   ];
 
   constructor() {}
